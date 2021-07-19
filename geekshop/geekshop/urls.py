@@ -24,7 +24,7 @@ from geekshop.views import index, contacts
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('products/', include('mainapp.urls')),
-    path('', index),
-    path('contacts/', contacts),
+    path('products/', include('mainapp.urls', namespace='products'), name= 'test_prod' ),
+    path('', index, name='test_ind'),
+    path('contacts/', contacts, name='test_cont'),
 ]

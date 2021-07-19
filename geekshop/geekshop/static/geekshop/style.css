@@ -701,6 +701,7 @@ td:first-child {
 	padding-right: 211px;
 	position: relative;
 }
+
 .hero h1 {
 	color:  #212121;
 	font-size: 62px;
@@ -1070,3 +1071,4 @@ td:first-child {
 .related-products a:hover .text{
 	display: block;
 }
+
