@@ -1,5 +1,26 @@
 from django.db import models
 
+
+class CategoryMenu(models.Model):
+
+    name = models.CharField(
+        verbose_name='имя',
+        max_length=64,
+    )
+
+    href = models.CharField(
+        verbose_name='ссылка',
+        max_length=64,
+        default='#',
+    )
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'меню категории'
+        verbose_name_plural = 'меню категорий'
+
 class ProductCategory(models.Model):
     name = models.CharField(
         verbose_name='имя',
@@ -27,11 +48,18 @@ class ProductCategory(models.Model):
         verbose_name = 'категория'
         verbose_name_plural = 'категории'
 
+
 class Product(models.Model):
     category = models.ForeignKey(
         ProductCategory,
         on_delete=models.CASCADE,
         verbose_name='категория',
+    )
+
+    category_menu = models.ForeignKey(
+        CategoryMenu,
+        on_delete=models.CASCADE,
+        verbose_name='категория меню',
     )
 
     name = models.CharField(
@@ -73,22 +101,3 @@ class Product(models.Model):
         verbose_name = 'товар'
         verbose_name_plural = 'товары'
 
-class CategoryMenu(models.Model):
-
-    name = models.CharField(
-        verbose_name='имя',
-        max_length=64,
-    )
-
-    href = models.CharField(
-        verbose_name='ссылка',
-        max_length=64,
-        default='#',
-    )
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        verbose_name = 'меню категории'
-        verbose_name_plural = 'меню категорий'

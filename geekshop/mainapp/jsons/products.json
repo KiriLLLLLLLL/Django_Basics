@@ -1,6 +1,7 @@
 [
   {
       "category": "Стулья",
+      "category_menu": "дом",
       "name": "Стул фамильный",
       "short_desc": "Уникальный дизайн",
       "image": "products_images/product-4.jpg",
@@ -11,6 +12,7 @@
   },
   {
       "category": "Диваны",
+      "category_menu": "модерн",
       "name": "Белый диван",
       "short_desc": "самый топ",
       "image": "products_images/product-3-sm.jpg",

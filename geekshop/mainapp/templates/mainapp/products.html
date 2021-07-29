@@ -52,6 +52,34 @@
 		</div>
 	</div>
 
+	<div class="product_list">
+	{% if category %}
+		<div class="title clearfix">
+			<h2>
+				Категория: "{{ category.name|title }}"
+			</h2>
+		</div>
+	{% endif %}
+		<div class="related-products clearfix products_list_margin">
+
+			{% for product in products %}
+				<div class="block">
+					<a href="{% url 'basket:add' product.pk %}">
+						<img src="/media/{{ product.image }}" alt="product">
+						<div class="text">
+							<img src="{% static 'geekshop/img/icon-hover.png' %}" alt="hover">
+								<h4>{{ product.name }}</h4>
+								<p>{{ product.description }}</p>
+								<p>{{ product.category.name }}</p>
+						</div>
+					</a>
+				</div>
+
+			{% endfor %}
+
+		</div>
+	</div>
+
 	<div class="related">
 		<div class="title clearfix">
 			<h2>Похожие продукты</h2>

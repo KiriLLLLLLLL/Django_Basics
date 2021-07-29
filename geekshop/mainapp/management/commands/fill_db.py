@@ -22,17 +22,6 @@ class Command(BaseCommand):
             new_category = ProductCategory(**category)
             new_category.save()
 
-        products = load_from_json('products')
-
-        Product.objects.all().delete()
-        for product in products:
-            category_name = product['category']
-
-            _category = ProductCategory.objects.get(name=category_name)
-            product['category'] = _category
-            new_product = Product(**product)
-            new_product.save()
-
         menues = load_from_json('menues')
 
         CategoryMenu.objects.all().delete()
@@ -40,7 +29,23 @@ class Command(BaseCommand):
             new_link = CategoryMenu(**menu)
             new_link.save()
 
+        products = load_from_json('products')
 
-        ShopUser.objects.create_superuser('django', 'django@geekshop.local', '123', age=33)
+        Product.objects.all().delete()
+        for product in products:
+            category_name = product['category']
+            cat_menu_name = product['category_menu']
+
+            _category = ProductCategory.objects.get(name=category_name)
+            product['category'] = _category
+            _cat_menu = CategoryMenu.objects.get(name=cat_menu_name)
+            product['category_menu'] = _cat_menu
+            new_product = Product(**product)
+            new_product.save()
+
+
+
+
+    ShopUser.objects.create_superuser('django', 'django@geekshop.local', '123', age=33)
 
 
