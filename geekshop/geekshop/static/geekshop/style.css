@@ -16,6 +16,11 @@ html, body {
 	height: 384px;
 }
 
+.products_list_margin {
+    margin-top: 100px;
+    margin-bottom: 0px;
+}
+
 .container {
 	width: 1366px;
 	margin: 0 auto;
@@ -42,6 +47,7 @@ html, body {
 	list-style-type: none;
 	margin-top: 67px;
 	float: right;
+	margin-right: 220px;
 }
 .menu li {
 	float: left;
@@ -78,8 +84,21 @@ html, body {
 	background-image: url(img/search.png);
 	position: absolute;
 	top: 63px;
-	left: 1176px;
+	left: 1330px;
 }
+
+.search_cont {
+
+	display: block;
+	width: 23px;
+	height: 23px;
+	background-image: url(img/search.png);
+	position: absolute;
+	top: 63px;
+	left: 1150px;
+
+}
+
 .basket {
 	display: block;
 	width: 23px;
@@ -701,6 +720,7 @@ td:first-child {
 	padding-right: 211px;
 	position: relative;
 }
+
 .hero h1 {
 	color:  #212121;
 	font-size: 62px;
@@ -1070,3 +1090,4 @@ td:first-child {
 .related-products a:hover .text{
 	display: block;
 }
+
