@@ -16,6 +16,11 @@ html, body {
 	height: 384px;
 }
 
+.products_list_margin {
+    margin-top: 100px;
+    margin-bottom: 0px;
+}
+
 .container {
 	width: 1366px;
 	margin: 0 auto;
@@ -30,6 +35,11 @@ html, body {
 	position: relative;
 }
 
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
 .logo {
 	background-image: url(img/logo.png);
 	margin-top: 63px;
@@ -42,6 +52,7 @@ html, body {
 	list-style-type: none;
 	margin-top: 67px;
 	float: right;
+
 }
 .menu li {
 	float: left;
@@ -78,8 +89,21 @@ html, body {
 	background-image: url(img/search.png);
 	position: absolute;
 	top: 63px;
-	left: 1176px;
+	left: 1260px;
 }
+
+.search_cont {
+
+	display: block;
+	width: 23px;
+	height: 23px;
+	background-image: url(img/search.png);
+	position: absolute;
+	top: 63px;
+	left: 1150px;
+
+}
+
 .basket {
 	display: block;
 	width: 23px;
@@ -564,7 +588,7 @@ html, body {
     color: #6c6c6c;
 }
 .text-footer {
-	margin-top: 120px;
+	margin-top: 65px;
 	width: 221px;
 	float: left;
 	margin-right: 68px;
@@ -701,18 +725,20 @@ td:first-child {
 	padding-right: 211px;
 	position: relative;
 }
+
 .hero h1 {
 	color:  #212121;
 	font-size: 62px;
 	font-weight: 100;
 	text-align: left;
-	margin-top: 142px;
+	margin-top: 100px;
 	text-transform: uppercase;
 	/*text-transform: capitalize;*/
 }
 
 .location {
 	padding: 0px 97px;
+	display:flex;
 }
 .location-1 {
 	height: 368px;
@@ -893,7 +919,9 @@ td:first-child {
 	padding-left: 98px;
 	padding-right: 98px;
 	margin-top: 98px;
-	height: 651px; 
+	height: 651px;
+	display: flex;
+    justify-content: space-between;
 }
 .details-slider {
 	width: 570px;
@@ -1070,3 +1098,4 @@ td:first-child {
 .related-products a:hover .text{
 	display: block;
 }
+
