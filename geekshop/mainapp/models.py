@@ -22,6 +22,7 @@ class CategoryMenu(models.Model):
         verbose_name_plural = 'меню категорий'
 
 class ProductCategory(models.Model):
+
     name = models.CharField(
         verbose_name='имя',
         max_length=64,
