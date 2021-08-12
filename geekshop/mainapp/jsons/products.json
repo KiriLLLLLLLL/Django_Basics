@@ -1,0 +1,24 @@
+[
+  {
+      "category": "Стулья",
+      "category_menu": "дом",
+      "name": "Стул фамильный",
+      "short_desc": "Уникальный дизайн",
+      "image": "products_images/product-4.jpg",
+      "description": "прям уууххххх",
+      "price": "12544.00",
+      "quantity": 465
+
+  },
+  {
+      "category": "Диваны",
+      "category_menu": "модерн",
+      "name": "Белый диван",
+      "short_desc": "самый топ",
+      "image": "products_images/product-3-sm.jpg",
+      "description": "никогда такого не видел",
+      "price": "235556.00",
+      "quantity": 34
+
+  }
+]
