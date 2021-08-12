@@ -15,6 +15,8 @@ from adminapp.views import (
     product_delete
 )
 
+from geekshop.adminapp.views import UserListView
+
 app_name = 'adminapp'
 
 
@@ -22,7 +24,7 @@ app_name = 'adminapp'
 
 urlpatterns = [
     path('users/create/', user_create, name='user_create'),
-    path('users/read/', users, name='users'),
+    path('users/read/', UserListView.as_view(), name='users'),
     path('users/update/<int:pk>/', user_update, name='user_update'),
     path('users/delete/<int:pk>/', user_delete, name='user_delete'),
 

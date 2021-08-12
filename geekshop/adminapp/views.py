@@ -1,4 +1,4 @@
-from django.http import HttpResponseRedirect
+ from django.http import HttpResponseRedirect
 from django.urls import reverse
 
 from authapp.forms import ShopUserRegisterForm
@@ -7,19 +7,25 @@ from authapp.models import ShopUser
 from django.shortcuts import get_object_or_404, render
 from mainapp.models import ProductCategory, Product
 from django.contrib.auth.decorators import user_passes_test
+from django.views.generic import ListView
 
 @user_passes_test(lambda u: u.is_superuser)
-def users(request):
-    title = 'админка/пользователи'
+#def users(request):
+#   title = 'админка/пользователи'
+#
+#    users_list = ShopUser.objects.all().order_by('-is_active', '-is_superuser', '-is_staff', 'username')
 
-    users_list = ShopUser.objects.all().order_by('-is_active', '-is_superuser', '-is_staff', 'username')
+#    context = {
+#        'title': title,
+#        'objects': users_list
+#    }
 
-    context = {
-        'title': title,
-        'objects': users_list
-    }
+#    return render(request, 'adminapp/users.html', context)
 
-    return render(request, 'adminapp/users.html', context)
+class UserListView(ListView):
+    model = ShopUser
+    template_name = 'adminapp/users.html'
+    context_object_name = 'objects'
 
 @user_passes_test(lambda u: u.is_superuser)
 def user_create(request):

@@ -46,6 +46,6 @@ class Command(BaseCommand):
 
 
 
-    ShopUser.objects.create_superuser('django', 'django@geekshop.local', '123', age=33)
+    ShopUser.objects.create_superuser('django1', 'django@geekshop.local', '123', age=33)
 
 
